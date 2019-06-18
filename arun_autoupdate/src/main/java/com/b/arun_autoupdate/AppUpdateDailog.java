@@ -19,11 +19,11 @@ import java.util.HashMap;
 public class AppUpdateDailog {
     private static FirebaseRemoteConfig mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
     private static HashMap<String, Object> firebaseDefaultMap;
-    public static final String VERSION_CODE_KEY = "latest_app_version";
+
     private static String TAG="AppUpdateDailog.class";
 
 
-    public static void initFCMConfigForUpdate(final Context context,final String appPackageName, final String title, final String message, final String button_text){
+    public static void initFCMConfigForUpdate(final Context context,final String VERSION_CODE_KEY,final String appPackageName, final String title, final String message, final String button_text){
         try{
             firebaseDefaultMap = new HashMap<>();
             firebaseDefaultMap.put(VERSION_CODE_KEY, getCurrentVersionCode(context));
@@ -44,7 +44,7 @@ public class AppUpdateDailog {
                         mFirebaseRemoteConfig.activateFetched();
                         Log.d(TAG, "Fetched value: " + mFirebaseRemoteConfig.getString(VERSION_CODE_KEY));
                         //calling function to check if new version is available or not
-                        checkForUpdate(context, appPackageName, title, message, button_text);
+                        checkForUpdate(context,VERSION_CODE_KEY, appPackageName, title, message, button_text);
                     } else {
                         //Toast.makeText(MainActivity.this, "Something went wrong please try again", Toast.LENGTH_SHORT).show();
                     }
@@ -58,7 +58,7 @@ public class AppUpdateDailog {
     }
 
     // check for update
-    private static void checkForUpdate(final Context context, final String appPackageName, final String title, final  String msg, final String okay) {
+    private static void checkForUpdate(final Context context,final String VERSION_CODE_KEY, final String appPackageName, final String title, final  String msg, final String okay) {
         try{
             int latestAppVersion = (int) mFirebaseRemoteConfig.getDouble(VERSION_CODE_KEY);
             if (latestAppVersion > getCurrentVersionCode(context)) {

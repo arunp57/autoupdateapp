@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.arunp57:autoupdateapp:0.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75b36d43a12354c869e580de7a449cd8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75b36d43a12354c869e580de7a449cd8/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.arunp57/autoupdateapp/0.0.1/9ba007ff28ff8a424feb02e840355c56b0fe8084/autoupdateapp-0.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

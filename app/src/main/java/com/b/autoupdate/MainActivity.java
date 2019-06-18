@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.b.arun_autoupdate.AppUpdateDailog;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btn_update;
@@ -20,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_update:
-
+                String appPackageName = getPackageName();
+                AppUpdateDailog.initFCMConfigForUpdate(MainActivity.this,appPackageName ,"","","OK");
                 break;
         }
     }
